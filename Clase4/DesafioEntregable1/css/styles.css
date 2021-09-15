@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&family=Lato:wght@300;400;700&display=swap");
+
+:root {
+  --primary-color: hsl(150, 100%, 63%);
+  --secondaty-color: hsl(26, 100%, 60%);
+  --error-color: hsl(348, 45%, 39%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: hsl(218, 80%, 2%);
+    --bg-color2: hsl(215, 21%, 11%);
+    --bg-color3: hsl(216, 28%, 7%);
+    --text-color: hsl(0, 0%, 85%);
+    --text-color2: hsl(0, 0%, 60%);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: hsl(0, 0%, 100%);
+    --bg-color2: hsl(0, 0%, 80%);
+    --bg-color3: hsl(0, 0%, 70%);
+    --text-color: hsl(210, 24%, 20%);
+    --text-color2: hsl(208, 18%, 45%);
+  }
+}
+
+html {
+  font-family: "Lato", sans-serif;
+  font-size: 62.5%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: bold;
+}
+
+body {
+  background-image: url("../assets/img/pattern2.png");
+  background-repeat: none;
+  background-size: cover;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  color: var(--text-color);
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--text-color2);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--text-color2);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--text-color2);
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: var(--text-color2);
+}
+
+input,
+textarea,
+select,
+input:focus,
+textarea:focus,
+select:focus {
+  background-color: var(--bg-color2);
+  outline: none;
+  border: none;
+  border-radius: 0.2em;
+}
+
+input[type="radio"]:checked + label {
+  color: var(--primary-color);
+}
+
+fieldset {
+  border-radius: 0.3em;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+table {
+  border-radius: 0.3em;
+  background-color: var(--bg-color2);
+}
+header a h1 {
+  color: var(--primary-color);
+}
+
+header a img:hover {
+  -webkit-filter: drop-shadow(0 0 5px var(--text-color));
+  filter: drop-shadow(0 0 5px white);
+  fill: white;
+}
+
+blockquote{
+  letter-spacing: .1rem;
+  line-height: 2rem;
+  margin:0;
+  text-align: center;
+}
+
