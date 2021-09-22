@@ -10,13 +10,20 @@
   --bg-base3: hsl(41, 7%, 48%);
   --bg-base4: hsl(36, 16%, 65%);
   --space-items: 1rem;
-  --space-container: 2rem;
+  --space-container: 5rem;
+  --shadow: 0 0 1rem hsla(0, 0%, 0%, 0.3);
 }
 
 /* Global */
 html {
   font-family: "Lato", sans-serif;
   font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 h1,
@@ -29,39 +36,65 @@ h6 {
   font-weight: bold;
 }
 
+/* Scrollbar */
+::-webkit-scrollbar {
+  overflow: hidden;
+  background-color: transparent;
+  width: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  overflow: hidden;
+  background-color: var(--bg-color1);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+body {
+  overflow: overlay;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .layoutContainer {
-  width: inherit;
-  height: inherit;
   background-image: url("../img/wavetop.svg"), url("../img/wavebot.svg"),
     url("../img/pattern.svg");
   background-repeat: no-repeat, no-repeat, repeat;
   background-position: top, bottom, center;
   background-size: contain, contain, auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
 }
-img {
-  width: inherit;
-  height: inherit;
-  border-radius: 1rem;
-  box-shadow: 0 0 1rem hsla(0, 0%, 0%, 0.3);
-}
+
 header,
 footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 2rem;
 }
 
 a {
   text-decoration: none;
 }
+ul {
+  list-style: none;
+}
 
 /* Header*/
-
+header {
+  grid-area: header;
+  /* position: sticky;
+  top: 0;
+  background: rgba(78, 70, 55, 0.5);
+  border-radius: 0 0 3rem 3rem; */
+}
 /* Chocolatey Logo*/
-.chocolateyLogo {
+.chocolakeyLogo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,21 +102,18 @@ a {
   color: var(--bg-color1);
   font-size: 2rem;
 }
-.chocolateyLogo h1 {
+.chocolakeyLogo h1 {
   vertical-align: middle;
 }
-.chocolateyLogo img,
-.chocolateyLogov2 img {
+.chocolakeyLogo img,
+.chocolakeyLogov2 img {
   box-shadow: none;
 }
 /* Navbar */
-.navbar {
-  display: flex;
-}
+.navbar,
 .navbar ul {
-  list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: var(--space-items);
 }
@@ -98,70 +128,98 @@ a {
 
 /* Main */
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5rem;
+  grid-area: main;
+  padding: 0 var(--space-container);
 }
-
 main > * {
-  margin: var(--space-container) 0;
+  margin: var(--space-container);
 }
 /* Product Example */
-.productExample {
-  width: 50%;
+
+.cardExample {
+  overflow: hidden;
   display: flex;
-  gap: var(--space-items);
-  justify-content: flex-start;
   align-items: center;
   border-radius: var(--space-items);
-  box-shadow: 0 0 1rem hsla(0, 0%, 0%, 0.3);
+  box-shadow: var(--shadow);
   background-color: var(--bg-base1);
 }
-.productExample img {
-  border-radius: 1rem 0 0 1rem;
-  max-width: 100%;
-  height: auto;
+
+.cardHero {
+  flex: 0 0 40%;
+}
+.cardHero img {
+  display: block;
+  width: 100%;
 }
 
-.productExample q {
-  justify-self: flex-end;
+.cardContent {
+  flex: 0 0 60%;
+  padding: var(--space-container);
+}
+.cardContent q {
   color: var(--bg-base4);
-  font-style: italic;
   font-size: 3rem;
-  margin: 0;
   text-align: center;
+  vertical-align: center;
+  margin: 0;
 }
 
 /* Products Demo */
 .productsDemo {
-  align-self: center;
-  width: auto;
+  gap: var(--space-container);
   display: flex;
-  gap: var(--space-items);
+  justify-content: space-evenly;
   border-radius: 1rem;
 }
-.productsDemo div{
+
+.item {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-base1);
-  height: 250px;
   border-radius: 1rem;
+  box-shadow: var(--shadow);
 }
 
-.productsDemo div img {
-  max-width: 200px;
-  height: auto;
-  border-radius: 1rem 1rem 0 0;
+.item img {
+  max-width: 100%;
+}
+
+.itemInfo {
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  width: 100%;
+  background-color: var(--bg-base1);
+  color: var(--bg-base4);
+  display: flex;
+  flex-direction: column;
+}
+
+.itemHeadInfo {
+  font-weight: bold;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--bg-color1);
 }
 
 /* Footer */
-
-/* Chocolatey Logo Variant 2 */
-.chocolateyLogov2 {
+footer {
+  grid-area: footer;
+  flex-direction: column;
+  justify-content: center;
+  color: var(--bg-color2);
+}
+/* Chocolakey Logo Variant 2 */
+.chocolakeyLogov2 {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: var(--space-items);
   color: var(--bg-color2);
   font-size: 2rem;
 }
+
+/* Media queries */
