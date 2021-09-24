@@ -6,9 +6,9 @@
   --bg-color2: hsl(36, 50%, 36%);
   --bg-color3: hsl(40, 46%, 24%);
   --bg-base1: hsl(39, 17%, 26%);
-  --bg-base2: hsl(39, 11%, 37%);
-  --bg-base3: hsl(41, 7%, 48%);
-  --bg-base4: hsl(36, 16%, 65%);
+  --bg-base2: hsl(39, 17%, 36%);
+  --bg-base3: hsl(39, 17%, 46%);
+  --bg-base4: hsl(39, 17%, 66%);
   --space-items: 1rem;
   --space-container: 5rem;
   --shadow: 0 0 1rem hsla(0, 0%, 0%, 0.3);
@@ -39,11 +39,13 @@ h6 {
 /* Scrollbar */
 ::-webkit-scrollbar {
   overflow: hidden;
-  background-color: transparent;
+  background-color: var(--bg-color3);
   width: 1rem;
 }
 ::-webkit-scrollbar-thumb {
   overflow: hidden;
+  
+  padding: 12rem;
   background-color: var(--bg-color1);
   border-radius: 1rem;
   box-shadow: var(--shadow);
@@ -55,7 +57,7 @@ body {
   scrollbar-width: none; /* Firefox */
 }
 
-.layoutContainer {
+body {
   background-image: url("../img/wavetop.svg"), url("../img/wavebot.svg"),
     url("../img/pattern.svg");
   background-repeat: no-repeat, no-repeat, repeat;
@@ -222,4 +224,13 @@ footer {
   font-size: 2rem;
 }
 
-/* Media queries */
+/* -- SECTIONS --  */
+
+/* Products */
+
+  /* Responsive Grid */
+  .productsGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+    gap: var(--space-container);
+  }
