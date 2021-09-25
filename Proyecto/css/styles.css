@@ -34,8 +34,12 @@ h5,
 h6 {
   font-family: "Josefin Sans", sans-serif;
   font-weight: bold;
+  margin: 0;
 }
 
+figure {
+  margin: 0;
+}
 /* Scrollbar */
 ::-webkit-scrollbar {
   overflow: hidden;
@@ -44,7 +48,7 @@ h6 {
 }
 ::-webkit-scrollbar-thumb {
   overflow: hidden;
-  
+
   padding: 12rem;
   background-color: var(--bg-color1);
   border-radius: 1rem;
@@ -58,6 +62,9 @@ body {
 }
 
 body {
+  animation: animatedBackground 30s linear infinite alternate;
+  min-width: 100vw;
+  min-height: 100vh;
   background-image: url("../img/wavetop.svg"), url("../img/wavebot.svg"),
     url("../img/pattern.svg");
   background-repeat: no-repeat, no-repeat, repeat;
@@ -70,6 +77,15 @@ body {
     "header"
     "main"
     "footer";
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: top, bottom, center;
+  }
+  to {
+    background-position: top, bottom, bottom right;
+  }
 }
 
 header,
@@ -90,10 +106,11 @@ ul {
 /* Header*/
 header {
   grid-area: header;
-  /* position: sticky;
+  position: sticky;
   top: 0;
   background: rgba(78, 70, 55, 0.5);
-  border-radius: 0 0 3rem 3rem; */
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: var(--shadow);
 }
 /* Chocolatey Logo*/
 .chocolakeyLogo {
@@ -117,7 +134,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: var(--space-items);
+  gap: var(--space-container);
 }
 .navbar ul li a {
   color: var(--bg-color1);
@@ -136,33 +153,38 @@ main {
 main > * {
   margin: var(--space-container);
 }
-/* Product Example */
+/* Product Example Horizontal */
 
 .cardExample {
   overflow: hidden;
   display: flex;
   align-items: center;
+  flex-flow: row wrap;
   border-radius: var(--space-items);
   box-shadow: var(--shadow);
   background-color: var(--bg-base1);
 }
 
 .cardHero {
-  flex: 0 0 40%;
+  flex: 1 1 40%;
+  min-height: 100%;
 }
 .cardHero img {
   display: block;
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .cardContent {
-  flex: 0 0 60%;
+  flex: 1 1 60%;
   padding: var(--space-container);
+  text-align: center;
+  line-height: 3.5em;
 }
 .cardContent q {
   color: var(--bg-base4);
-  font-size: 3rem;
-  text-align: center;
+  font-size: 2.5rem;
   vertical-align: center;
   margin: 0;
 }
@@ -182,10 +204,16 @@ main > * {
   background-color: var(--bg-base1);
   border-radius: 1rem;
   box-shadow: var(--shadow);
+  transition: all 0.2s ease-in-out;
+}
+
+.item:hover {
+  transform: scale(1.03);
 }
 
 .item img {
-  max-width: 100%;
+  display: block;
+  width: 100%;
 }
 
 .itemInfo {
@@ -216,6 +244,7 @@ footer {
 }
 /* Chocolakey Logo Variant 2 */
 .chocolakeyLogov2 {
+  align-self: flex-start;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -224,13 +253,19 @@ footer {
   font-size: 2rem;
 }
 
+.chocolakeyLogov2:last-child {
+  margin: 0;
+}
+
 /* -- SECTIONS --  */
 
 /* Products */
 
-  /* Responsive Grid */
-  .productsGrid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
-    gap: var(--space-container);
-  }
+/* Responsive Grid */
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+  gap: var(--space-container);
+}
+
+/* Clases reutilizadas: .item .itemInfo itemHeadInfo */
