@@ -2,16 +2,18 @@
 
 /* variables */
 :root {
-  --bg-color1: hsl(45, 100%, 39%);
+  --bg-color1: #c79500;
   --bg-color2: hsl(36, 50%, 36%);
   --bg-color3: hsl(40, 46%, 24%);
-  --bg-base1: hsl(39, 17%, 26%);
+  --bg-base1: #4e4637;
   --bg-base2: hsl(39, 17%, 36%);
   --bg-base3: hsl(39, 17%, 46%);
   --bg-base4: hsl(39, 17%, 66%);
   --space-items: 1rem;
   --space-container: 5rem;
   --shadow: 0 0 1rem hsla(0, 0%, 0%, 0.3);
+  --deg: 180deg;
+  --gradient: linear-gradient(var(--deg), var(--bg-color1), hsla(0, 0%, 0%, 0));
 }
 
 /* Global */
@@ -105,12 +107,14 @@ ul {
 
 /* Header*/
 header {
+  background: radial-gradient(
+    hsla(39, 17%, 26%, 1),
+    hsla(39, 17%, 26%, 0.65),
+    hsla(39, 17%, 26%, 1)
+  );
   grid-area: header;
   position: sticky;
   top: 0;
-  background: rgba(78, 70, 55, 0.5);
-  border-radius: 0 0 2rem 2rem;
-  box-shadow: var(--shadow);
 }
 /* Chocolatey Logo*/
 .chocolakeyLogo {
@@ -122,8 +126,29 @@ header {
   font-size: 2rem;
 }
 .chocolakeyLogo h1 {
-  vertical-align: middle;
+  text-align: center;
+
+  background: linear-gradient(
+    to right,
+    #aa8100 20%,
+    var(--bg-color1) 40%,
+    var(--bg-color1) 60%,
+    #aa8100 80%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 1.5s linear infinite;
 }
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
 .chocolakeyLogo img,
 .chocolakeyLogov2 img {
   box-shadow: none;
@@ -208,7 +233,7 @@ main > * {
 }
 
 .item:hover {
-  transform: scale(1.03);
+  transform: scale(0.98);
 }
 
 .item img {
