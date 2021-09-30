@@ -140,8 +140,8 @@ header {
   background: linear-gradient(
     to right,
     #aa8100 20%,
-    var(--bg-color1) 40%,
-    var(--bg-color1) 60%,
+    var(--bg-color2) 40%,
+    var(--bg-color2) 60%,
     #aa8100 80%
   );
   background-size: 200% auto;
@@ -152,6 +152,12 @@ header {
 
   animation: shine 1.5s linear infinite;
 }
+
+.chocolakeyLogo a:hover{
+text-decoration: none;
+border-bottom: transparent;
+}
+
 @keyframes shine {
   to {
     background-position: 200% center;
@@ -234,6 +240,9 @@ main > * {
 
 /* Products Demo */
 /* Bootstrap alternative */
+.gap{
+  gap: 2rem;
+}
 .card-body{
   background-color: var(--bg-base1);
 }
