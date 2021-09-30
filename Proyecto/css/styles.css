@@ -233,7 +233,14 @@ main > * {
 }
 
 /* Products Demo */
-.productsDemo {
+/* Bootstrap alternative */
+.card-body{
+  background-color: var(--bg-base1);
+}
+.card-title{
+  color: var(--bg-color1);
+}
+/* .productsDemo {
   gap: var(--space-container);
   display: flex;
   justify-content: space-evenly;
@@ -276,7 +283,7 @@ main > * {
   justify-content: space-between;
   align-items: center;
   color: var(--bg-color1);
-}
+} */
 
 
 /* -- SECTIONS --  */
