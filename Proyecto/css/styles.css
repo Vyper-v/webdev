@@ -2,10 +2,10 @@
 
 /* variables */
 :root {
-  --bg-color1: hsl(45, 100%, 39%);
+  --bg-color1: #c79500;
   --bg-color2: hsl(36, 50%, 36%);
   --bg-color3: hsl(40, 46%, 24%);
-  --bg-base1: hsl(39, 17%, 26%);
+  --bg-base1: #4e4637;
   --bg-base2: hsl(39, 17%, 36%);
   --bg-base3: hsl(39, 17%, 46%);
   --bg-base4: hsl(39, 17%, 66%);
@@ -55,6 +55,7 @@ figure {
   overflow: hidden;
   background-color: var(--bg-color3);
   width: 1rem;
+  height: 1rem;
 }
 ::-webkit-scrollbar-thumb {
   overflow: hidden;
@@ -79,7 +80,7 @@ body {
     url("../img/pattern.svg");
   background-repeat: no-repeat, no-repeat, repeat;
   background-position: top, bottom, center;
-  background-size: contain, contain, auto;
+  background-size: 100vw, 100vw, auto;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
@@ -100,9 +101,6 @@ body {
 
 header,
 footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 2rem;
   z-index: 10;
 }
@@ -116,7 +114,10 @@ ul {
 
 /* Header*/
 header {
-  background: radial-gradient(
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
     hsla(39, 17%, 26%, 1),
     hsla(39, 17%, 26%, 0.65),
     hsla(39, 17%, 26%, 1)
@@ -170,32 +171,48 @@ header {
 }
 /* Navbar */
 /* bootstrap alternative */
-.navbar a {
-  color: var(--bg-color1);
+.navbar{
+  padding: 1rem
+  ;
+  background-color: transparent;
+}
+.navbar-toggler{
+  color: var(--bg-base1);
+  background: var(--bg-color1);
+  border: 2px solid var(--bg-base1);
+}
+
+.navbar-toggler-icon{
+  background-image: none;
+  background-image: url("../img/chocolateIcon.svg")!important;
+  background-size: contain;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+}
+
+.nav-link,.navbar a{
+  color: var(--bg-color1) !important;
   font-size: 1.5rem;
 }
 
-.navbar a:hover,
-.navbar a:focus {
-  color: var(--bg-base4);
+.nav-item:hover,
+.nav-item:focus {
+  color: var(--bg-base4) !important;
 }
-.navbar-nav {
-  gap: var(--space-container);
-}
-.dropdown-menu{
-  background-color: var(--bg-color1);
+
+.dropdown-menu {
+  background-color: var(--bg-color1) !important;
   padding: 0;
 }
-.dropdown-menu a{
-  color: var(--bg-base1);
+.dropdown-menu a {
+  color: var(--bg-base1) !important;
   font-size: 1.5rem;
 }
-.dropdown-menu a:hover{
-  background-color: var(--bg-base1);
-  color: var(--bg-color1);
+.dropdown-menu a:hover {
+  background-color: var(--bg-base1)!important;
+  color: var(--bg-color1)!important;
   outline: 2px solid var(--bg-color1);
 }
-
 
 /* .navbar,
 .navbar ul {
@@ -229,34 +246,34 @@ main > * {
   overflow: hidden;
   display: flex;
   align-items: center;
-  flex-flow: row wrap;
+  justify-content: space-between;
+  flex-flow: row nowrap;
   border-radius: var(--space-items);
   box-shadow: var(--shadow);
   background-color: var(--bg-base1);
 }
 
 .cardHero {
-  flex: 0 1 40%;
-  width: 100%;
-  height: 100%;
+  min-width: 40%;
+  min-height: 100%;
+  overflow: hidden;
 }
 .cardHero img {
   display: block;
-  width: 100%;
-  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
   object-fit: contain;
 }
 
 .cardContent {
-  flex: 0 1 60%;
-  padding: var(--space-container);
+  padding: 2rem;
   color: var(--bg-base4);
   border-radius: 1rem;
   max-height: 100%;
 }
 .cardContent blockquote {
   font-style: italic;
-  font-size: 2vw;
+  font-size: 2em;
   margin: 0;
 }
 .cardContent figcaption {
@@ -421,31 +438,41 @@ main > * {
 ::placeholder,
 option,
 select {
-  color: var(--bg-base4);
+  color: var(--bg-color1);
 }
+
 label {
   color: var(--bg-base1);
   font-size: 3rem;
+  font-weight: bold;
 }
 input,
 textarea,
 select {
-  background: var(--bg-color2);
+  color: var(--bg-color1);
+  background: var(--bg-base1);
   border-radius: 0.3rem;
   border: none;
   outline: none;
   font-size: 2rem;
+  padding: 1rem;
 }
 textarea {
   resize: none;
-  color: var(--bg-base4);
+  color: var(--bg-color1);
+  padding: 1rem;
 }
 input[type="submit"] {
-  color: var(--bg-base4);
+  color: var(--bg-color1);
+  font-weight: bold;
 }
 
 /* Footer */
 footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   grid-area: footer;
   flex-direction: column;
   justify-content: center;
@@ -470,22 +497,32 @@ footer > * {
 
 /* Clases reutilizadas: .item .itemInfo itemHeadInfo */
 
-@media (max-width: 53.125rem) {
-  .productsDemo,
-  header,
-  footer {
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 48rem) {
+
+  .cardExample{
+    flex-direction: column;
+    width: 100%;
   }
-  .chocolakeyLogov2 {
-    align-self: center;
+
+  .cardHero,.cardContent{
+    flex: 1 1 auto;
   }
+
+  .chocolakeyLogo,.chocolakeyLogov2{
+    flex-direction: column;
+  }
+
+  .chocolakeyLogo img,.chocolakeyLogov2 img{
+    display: none;
+  }
+
   .item {
     flex: 1 1 auto;
   }
 
   .formSection {
     flex-flow: column-reverse wrap;
+    justify-content: center;
+    align-items: center;
   }
 }
