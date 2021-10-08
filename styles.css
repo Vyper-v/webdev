@@ -1,0 +1,31 @@
+
+
+@media (max-width: 48rem) {
+
+  .cardExample{
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cardHero,.cardContent{
+    flex: 1 1 auto;
+  }
+
+  .chocolakeyLogo,.chocolakeyLogov2{
+    flex-direction: column;
+  }
+
+  .chocolakeyLogo img,.chocolakeyLogov2 img{
+    display: none;
+  }
+
+  .item {
+    flex: 1 1 auto;
+  }
+
+  .formSection {
+    flex-flow: column-reverse wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}

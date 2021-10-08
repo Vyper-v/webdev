@@ -1,0 +1,20 @@
+@use "../utils" as *;
+// content in form component
+
+
+#Contact_Us {
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: nth($scale, 6) * 1rem;
+
+ img {
+  height: 50vmin;
+  width: 50vmin;
+ }
+ 
+ @media (max-width:76.8rem) {
+  flex-direction: column-reverse ;
+ }
+}

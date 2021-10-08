@@ -1,0 +1,15 @@
+@use '../utils/' as *;
+
+.dropdown-menu {
+ background-color: $color-primary !important;
+ padding: 0;
+}
+.dropdown-menu a {
+ color: $color-base-1 !important;
+ font-size: 1.5rem;
+}
+.dropdown-menu a:hover {
+ background-color: $color-base-1!important;
+ color: $color-primary!important;
+ outline: 2px solid $color-primary;
+}

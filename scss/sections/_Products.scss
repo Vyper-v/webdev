@@ -1,0 +1,39 @@
+@use "../utils" as *;
+
+.products {
+  display: grid;
+  padding: nth($list: $scale, $n: 5) * 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(38rem, 1fr));
+  gap: nth($scale, 3) * 1rem;
+
+  &__item {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: $color-base-1;
+    border-radius: 1rem;
+    box-shadow: $shadow-1;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transform: scale(0.98);
+    }
+  }
+
+  &__Info {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+    width: 100%;
+    background-color: $color-base-1;
+    color: $color-primary;
+    display: flex;
+    flex-direction: column;
+    div {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        color: $color-primary;
+      }
+    }
+  }
+}

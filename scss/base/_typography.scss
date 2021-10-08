@@ -1,0 +1,26 @@
+@use "../utils" as *;
+@use "sass:list";
+
+html {
+  font-family: $font-1;
+  font-size: 62.5%;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    font-family: $font-2;
+    font-size: 6.653rem - list.nth($scale,$i);
+  }
+}
+
+a {
+  color: $color-primary;
+  &:hover {
+    color: $color-base-1;
+  }
+}
+
+p,span {
+  font-size: 2rem;
+  color: $color-base-2;
+}

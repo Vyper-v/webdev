@@ -1,0 +1,14 @@
+@use '../utils' as *;
+::-webkit-scrollbar {
+ background-color: $color-base-1;
+ width: 1rem;
+ height: 1rem;
+}
+::-webkit-scrollbar-thumb {
+ overflow: hidden;
+
+ padding: 12rem;
+ background-color: $color-primary;
+ border-radius: 1rem;
+ box-shadow: $shadow-1;
+}

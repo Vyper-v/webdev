@@ -1,0 +1,50 @@
+@use "../utils" as *;
+@use "sass:list";
+
+
+
+
+.form {
+ padding: list.nth($scale, 3) * 1rem;
+ overflow: hidden;
+ background: $color-primary;
+ border-radius: list.nth($scale, 1) * 1rem;
+ box-shadow: $shadow-1;
+ display: flex;
+ flex-flow: column;
+ gap: list.nth($scale, 1) * 1rem;
+}
+
+::placeholder,
+option,
+select {
+  color: $color-primary;
+}
+
+label {
+  color: $color-base-1;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+input,
+textarea,
+select {
+  color: $color-primary;
+  background: $color-base-1;
+  border-radius: 0.3rem;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  padding: 1rem;
+}
+textarea {
+  resize: none;
+  color: $color-primary;
+  padding: 1rem;
+}
+input[type="submit"] {
+  align-self: end;
+  color: $color-primary;
+  font-weight: bold;
+}

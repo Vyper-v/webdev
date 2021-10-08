@@ -1,0 +1,22 @@
+@use "../utils" as *;
+@use 'sass:list';
+.aboutSection {
+  
+  padding: list.nth($scale,3) * 1rem;
+  &__text {
+    font-family: $font-2;
+    font-size: 10vh;
+    color: $color-base-2;
+    text-shadow: $shadow-1;
+    border-radius: 1rem;
+    // padding: list.nth($scale,1) * 1rem;
+  }
+
+  &__img {
+    height: 55vmin;
+    min-width: 100%;
+    object-fit: cover;
+    border-radius: list.nth($scale,1) * 1rem;
+    box-shadow: $shadow-1;
+  }
+}

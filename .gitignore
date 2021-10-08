@@ -4,3 +4,4 @@
 *.scss.map
 .vscode./
 *:Zone.Identifier
+node_modules/

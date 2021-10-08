@@ -1,0 +1,50 @@
+@use "../utils/" as *;
+
+.quoteCard {
+ overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  background-color: $color-base-1;
+  &__Hero {
+   min-width: 40%;
+   min-height: 100%;
+   overflow: hidden;
+    img {
+     min-width: 100%;
+     min-height: 100%;
+     object-fit: contain;
+    }
+  }
+
+  &__Content {
+   display: flex;
+   flex-direction: column;
+    padding: 2rem;
+    color: $color-base-2;
+    border-radius: 1rem;
+    max-height: 100%;
+    font-style: italic;
+    blockquote {
+      font-size: 2em;
+    }
+    figcaption {
+      margin-top: 1rem;
+      font-size: 100%;
+       align-self: flex-end;
+    }
+  }
+}
+
+/* Products Demo */
+/* Bootstrap alternative */
+.gap {
+  gap: 2rem;
+}
+.card-body {
+  background-color: $color-base-1;
+  span{
+   color: $color-primary;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "webdev",
+  "version": "1.0.0",
+  "description": "Chocolakey website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sass --watch scss:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vyper-v/webdev.git"
+  },
+  "author": "David Gomez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vyper-v/webdev/issues"
+  },
+  "homepage": "https://github.com/Vyper-v/webdev#readme",
+  "devDependencies": {
+    "sass": "^1.42.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.2"
+  }
+}

@@ -1,0 +1,17 @@
+body {
+  animation: animatedBackground 60s linear infinite alternate;
+  background-image: url("../../img/wavetop.svg"), url("../../img/wavebot.svg"),
+    url("../../img/pattern.svg");
+  background-repeat: no-repeat, no-repeat, repeat;
+  background-position: top, bottom, top left;
+  background-size: 100vw, 100vw, auto;
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: top, bottom, top left;
+  }
+  to {
+    background-position: top, bottom, center left;
+  }
+}

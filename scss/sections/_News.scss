@@ -1,0 +1,47 @@
+@use "../utils" as *;
+
+.news {
+  background-color: $color-secundary;
+  box-shadow: $shadow-1;
+  border-radius: $border-radius;
+  overflow: hidden;
+  color: $color-base-2;
+  display: flex;
+  flex-flow: column wrap;
+  gap: nth($scale, 2) * 1rem;
+  padding: nth($scale, 3) * 1rem;
+  margin: 5vmin;
+
+  &__item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: $border-radius;
+    overflow: hidden;
+    display: flex;
+    padding: nth($scale, 2) * 1rem;
+    text-align: justify;
+  }
+
+  &__Head {
+    img {
+      width: 20vmin;
+      object-fit: cover;
+      border-radius: 1rem;
+      float: left;
+      margin-right: 2rem;
+    }
+  }
+
+  &__Info {
+    display: flex;
+    flex-direction: column;
+    color: $color-primary;
+    h3 {
+      font-size: 3rem;
+    }
+    span {
+      color: $color-primary;
+      font-size: 2rem;
+      margin-right: nth($scale, 2) * 1rem;
+    }
+  }
+}

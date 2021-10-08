@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&family=Lato:wght@300;400;700&display=swap");
+
+$font-1: "Lato", sans-serif;
+$font-2: "Josefin Sans", sans-serif;
+
+$color-primary: hsl(45, 100%, 39%);
+$color-secundary:hsl(39, 45%, 10%);
+$color-base-1: hsl(39, 17%, 26%);
+$color-base-2: hsl(39, 17%, 66%);
+
+$scale: 1, 1.25, 2, 2.827, 4, 5.653;
+
+$shadow-1: 0 0 1rem hsla(0, 0%, 0%, 0.8);
+$shadow-2: 0 0 1rem hsla(0, 0%, 0%, 0.6);
+$shadow-3: 0 0 1rem hsla(0, 0%, 0%, 0.4);
+$shadow-4: 0 0 1rem hsla(0, 0%, 0%, 0.2);
+
+$border-radius: 1.5rem;
