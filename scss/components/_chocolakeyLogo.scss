@@ -4,35 +4,60 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: list.nth($scale,3) * 1rem;
+  gap: list.nth($scale, 3) * 1rem;
   color: $color-primary;
   font-size: 2rem;
-}
-.chocolakeyLogo h1 {
-  text-align: center;
+  h1 {
+    text-align: center;
+    background: linear-gradient(
+      to right,
+      $color-base-2 0,
+      lighten($color-primary, 4) 22%,
+      $color-primary 45%,
+      $color-base-2 50%,
+      $color-primary 55%,
+      lighten($color-primary, 4) 78%,
+      $color-base-2 100%
+    );
+    background-size: 200% auto;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-  background: linear-gradient(
-    to right,
-    $color-base-2 0,
-    lighten($color-primary,4) 22%,
-    $color-primary 45%,
-    $color-base-2 50%,
-    $color-primary 55%,
-    lighten($color-primary,4) 78%,
-    $color-base-2 100%
-  );
-  background-size: 200% auto;
-  background-clip: text;
-  text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    animation: shine 3.5s linear infinite;
+  }
+  a:hover {
+    text-decoration: none;
+    border-bottom: transparent;
+  }
+  img {
+    box-shadow: none;
+  
+  }
+  @media (max-width:76.8rem) {
+    img{
+      display: none;
+    }
+    h1{
+      font-size: 2.5rem;
+    }
+  }
 
-  animation: shine 3.5s linear infinite;
-}
-
-.chocolakeyLogo a:hover {
-  text-decoration: none;
-  border-bottom: transparent;
+  &--v2 {
+    align-self: flex-start;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: list.nth($scale, 3) * 1rem;
+    color: $color-base-1;
+    font-size: 2rem;
+    @media (max-width:76.8rem) {
+      img,h1{
+        display: none;
+      }
+    }
+  }
 }
 
 @keyframes shine {
@@ -41,23 +66,3 @@
   }
 }
 
-.chocolakeyLogo img,
-.chocolakeyLogov2 img {
-  box-shadow: none;
-}
-
-
-/* Chocolakey Logo Variant 2 */
-.chocolakeyLogov2 {
-  align-self: flex-start;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: list.nth($scale,3) * 1rem;
-  color: $color-base-1;
-  font-size: 2rem;
-}
-
-.chocolakeyLogov2:last-child {
-  margin: 0;
-}

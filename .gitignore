@@ -2,6 +2,6 @@
 *.css.map
 *.sass.map
 *.scss.map
-.vscode./
+.vscode/
 *:Zone.Identifier
 node_modules/

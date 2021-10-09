@@ -1,0 +1,5 @@
+@use "../utils" as *;
+$white: $color-primary;
+$blue: $color-primary;
+$navbar-dark-toggler-icon-bg: url("../../img/chocolateIcon.svg");
+@import "../../node_modules/bootstrap/scss/bootstrap";
