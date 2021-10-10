@@ -1,5 +1,4 @@
 @use "../utils" as *;
-@use "sass:list";
 
 html {
   font-family: $font-1;
@@ -9,7 +8,7 @@ html {
 @for $i from 1 through 6 {
   h#{$i} {
     font-family: $font-2;
-    font-size: 6.653rem - list.nth($scale,$i);
+    font-size: 6.653rem - (nth($scale,$i) * 1rem);
   }
 }
 

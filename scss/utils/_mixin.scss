@@ -1,0 +1,44 @@
+@mixin mobile {
+  @media (max-width: 76.798rem) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 61.999rem) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: 119.998rem) {
+    @content;
+  }
+}
+
+@mixin flexbox(
+  $direction: row,
+  $horizontal: flex-start,
+  $vertical: flex-start,
+  $gap: 0,
+  $wrap: nowrap
+) {
+  display: flex;
+  gap: $gap;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+  @if $direction == row or $direction == row-reverse {
+    justify-content: $horizontal;
+    align-items: $vertical;
+  } @else if $direction == column or $direction == column-reverse {
+    align-items: $horizontal;
+    justify-content: $vertical;
+  }
+
+  @content;
+}
+
+@mixin flexcentered {
+  justify-content: center;
+  align-items: center;
+}

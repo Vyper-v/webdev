@@ -1,4 +1,4 @@
-@use '../utils' as *;
+@use "../utils" as *;
 
 body {
   overflow: overlay;
@@ -18,36 +18,39 @@ body {
 }
 
 header {
- display: flex;
- justify-content: space-between;
- align-items: center;
- background: mix($color-base-1,rgba(0, 0, 0, 0.80),70%);
- grid-area: header;
- position: sticky;
- top: 0;
+  @include flexbox(row, space-between, center);
+  background: mix($color-base-1, rgba(0, 0, 0, 0.8), 70%);
+  grid-area: header;
+  position: sticky;
+  top: 0;
 }
 
 main {
- grid-area: main;
- padding: 0 nth($list: $scale, $n: 4) *1rem;
- & > * {
-  
- padding: nth($list: $scale, $n: 4) *1rem;
- }
+  grid-area: main;
+  padding: 0 nth($list: $scale, $n: 4) * 1rem;
+  & > * {
+    padding: nth($list: $scale, $n: 4) * 1rem;
+  }
 }
 
 footer {
- display: flex;
- flex-direction: row;
- justify-content: space-between;
- align-items: center;
- grid-area: footer;
- flex-direction: column;
- justify-content: center;
+  @include flexbox(row,$horizontal:space-between,$vertical:center);
+  grid-area: footer;
 
- & > * {
-  color: $color-secundary;
- }
+  * {
+    color: $color-secundary;
+  }
+  p{
+    font-size: 1rem;
+    align-self: end;
+  }
+
+  @include mobile{
+    @include flexbox(column,center,center);
+    p{
+      align-self: initial;
+    }
+  }
 }
 
 header,
@@ -55,4 +58,3 @@ footer {
   padding: 2rem;
   z-index: 10;
 }
-

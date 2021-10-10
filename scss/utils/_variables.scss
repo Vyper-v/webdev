@@ -4,7 +4,7 @@ $font-1: "Lato", sans-serif;
 $font-2: "Josefin Sans", sans-serif;
 
 $color-primary: hsl(45, 100%, 39%);
-$color-secundary:hsl(39, 45%, 10%);
+$color-secundary: hsl(39, 45%, 10%);
 $color-base-1: hsl(39, 17%, 26%);
 $color-base-2: hsl(39, 17%, 66%);
 
@@ -16,3 +16,31 @@ $shadow-3: 0 0 1rem hsla(0, 0%, 0%, 0.4);
 $shadow-4: 0 0 1rem hsla(0, 0%, 0%, 0.2);
 
 $border-radius: 1.5rem;
+
+$breakpoints: (
+  'mobile': 76.798rem,
+  'tablet': 61.999rem,
+  'desktop': 119.998rem,
+);
+
+$text-gradient:linear-gradient(
+ to right,
+ $color-base-2 0,
+ lighten($color-primary, 4) 22%,
+ $color-primary 45%,
+ $color-base-2 50%,
+ $color-primary 55%,
+ lighten($color-primary, 4) 78%,
+ $color-base-2 100%
+);
+
+$text-gradient-2:linear-gradient(
+ to right,
+ $color-base-1,
+ lighten($color-secundary, 4) 22%,
+ $color-secundary 45%,
+ $color-base-1 50%,
+ $color-secundary 55%,
+ lighten($color-secundary, 4) 78%,
+ $color-base-1 100%
+);
