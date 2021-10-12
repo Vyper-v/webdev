@@ -2,13 +2,13 @@ console.clear();
 
 const TAIL_LENGTH = 10;
 
-const cursor = document.getElementById('cursor');
+const cursor = document.getElementById("cursor");
 
 let mouseX = 0;
 let mouseY = 0;
 
 let cursorCircles;
-let cursorHistory = Array(TAIL_LENGTH).fill({x: 0, y: 0});
+let cursorHistory = Array(TAIL_LENGTH).fill({ x: 0, y: 0 });
 
 function onMouseMove(event) {
   mouseX = event.clientX;
@@ -17,32 +17,41 @@ function onMouseMove(event) {
 
 function initCursor() {
   for (let i = 0; i < TAIL_LENGTH; i++) {
-    let div = document.createElement('div');
-    div.classList.add('cursor-circle') ;
+    let div = document.createElement("div");
+    div.classList.add("cursor-circle");
     cursor.append(div);
   }
-  cursorCircles = Array.from(document.querySelectorAll('.cursor-circle'));
+  cursorCircles = Array.from(document.querySelectorAll(".cursor-circle"));
 }
 
-function updateCursor() {  
+function updateCursor() {
   cursorHistory.shift();
   cursorHistory.push({ x: mouseX, y: mouseY });
-    
+
   for (let i = 0; i < TAIL_LENGTH; i++) {
     let current = cursorHistory[i];
     let next = cursorHistory[i + 1] || cursorHistory[TAIL_LENGTH - 1];
-    
+
     let xDiff = next.x - current.x;
     let yDiff = next.y - current.y;
-    
+
     current.x += xDiff * 0.35;
     current.y += yDiff * 0.35;
-    cursorCircles[i].style.transform = `translate(${current.x}px, ${current.y}px) scale(${i/TAIL_LENGTH})`;  
+    cursorCircles[i].style.transform = `translate(${current.x}px, ${
+      current.y
+    }px) scale(${i / TAIL_LENGTH})`;
   }
-  requestAnimationFrame(updateCursor)
+  requestAnimationFrame(updateCursor);
 }
 
-document.addEventListener('mousemove', onMouseMove, false);
+document.addEventListener("mousemove", onMouseMove, false);
 
 initCursor();
 updateCursor();
+
+// navbar-toggler-icon
+
+const icon = document.querySelector(".navbar-toggler-icon");
+icon.addEventListener("click", (event) => {
+  event.target.classList.toggle("icn-spinner");
+});

@@ -4,7 +4,7 @@
   "description": "Chocolakey website",
   "main": "index.js",
   "scripts": {
-    "watch": "sass --watch scss:css",
+    "watch": "sass --watch scss:public/css",
     "build": "sass --style=compressed scss:public/css"
   },
   "repository": {

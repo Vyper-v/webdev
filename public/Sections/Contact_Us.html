@@ -14,7 +14,7 @@
         <img src="../img/Property 1=Default.svg" alt="Chocolakey Logo" />
         <h1 class="chocolakeyLogo__name--animated">Chocolakey</h1></a
       >
-      <nav class="navbar navbar-expand-lg navbar-dark">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">About</a>
 
@@ -383,5 +383,34 @@
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="goo"
+      version="1.1"
+      width="100%"
+    >
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="6"
+            result="blur"
+          ></feGaussianBlur>
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15"
+            result="goo"
+          ></feColorMatrix>
+          <feComposite
+            in="SourceGraphic"
+            in2="goo"
+            operator="atop"
+          ></feComposite>
+        </filter>
+      </defs>
+    </svg>
+    <div id="cursor"></div>
+    <script src="../js/script.js"></script>
   </body>
 </html>

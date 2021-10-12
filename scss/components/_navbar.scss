@@ -1,29 +1,29 @@
-@use '../utils/' as *;
+@use "../utils/" as *;
 
-.navbar{
- padding: nth($list: $scale, $n: 1)
- ;
- background-color: transparent;
+.navbar {
+  padding: nth($list: $scale, $n: 1);
+  background-color: transparent;
 }
-.navbar-toggler{
- color: $color-base-1;
- background: $color-primary;
- border: 2px solid $color-base-1;
+.navbar-toggler {
+  color: $color-base-1;
+  background: $color-primary;
 }
 
-.navbar-toggler-icon{
- background-image: none;
- background-size: contain;
- background-clip: border-box;
- background-repeat: no-repeat;
+.navbar-toggler-icon {
+  background-image: none;
+  background-size: contain;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  transition: all 0.7s ease-in-out;
 }
 
-.nav-link,.navbar a{
- // color: $color-primary !important;
- font-size: 1.5rem;
+.nav-link,
+.navbar a {
+  // color: $color-primary !important;
+  font-size: 1.5rem;
 }
 
-// .nav-item:hover,
-// .nav-item:focus {
-//  color: $color-base-2 !important;
-// }
+.icn-spinner{
+ transform: rotate(180deg);
+  display: inline-block;
+}
