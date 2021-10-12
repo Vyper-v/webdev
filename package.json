@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "watch": "sass --watch scss:css",
-    "build": "sass --style=compressed scss:css"
+    "build": "sass --style=compressed scss:public/css"
   },
   "repository": {
     "type": "git",
