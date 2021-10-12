@@ -1,8 +1,8 @@
 @use "../utils" as *;
 
 .news {
-  background-color: $color-secundary;
-  box-shadow: $shadow-1;
+  background-color: $color-primary;
+  box-shadow: $shadow-4;
   border-radius: $border-radius;
   overflow: hidden;
   color: $color-base-2;
@@ -34,12 +34,12 @@
   &__Info {
     display: flex;
     flex-direction: column;
-    color: $color-primary;
+    color: $color-secundary;
     h3 {
       font-size: 3rem;
     }
     span {
-      color: $color-primary;
+      color: $color-secundary;
       font-size: 2rem;
       margin-right: nth($scale, 2) * 1rem;
     }

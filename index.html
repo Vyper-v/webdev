@@ -5,25 +5,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#4e4637">
+    <meta name="theme-color" content="#4e4637" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body>
+  <body class="page-wrap">
     <header>
-      <a class="chocolakeyLogo" href="#">
-        <img src="./img/Property 1=Default.svg" alt="Chocolakey Logo" />
-        <h1>Chocolakey</h1></a
+      <a class="chocolakeyLogo" href="../index.html">
+        <img src="../img/Property 1=Default.svg" alt="Chocolakey Logo" />
+        <h1 class="chocolakeyLogo__name--animated">Chocolakey</h1></a
       >
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Home</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./Sections/Products.html">Products</a>
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="./Sections/Products.html"
+                  >Products</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./Sections/News.html">News</a>
@@ -32,16 +45,17 @@
                 <a class="nav-link" href="./Sections/About.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./Sections/Contact_Us.html">Contact Us</a>
+                <a class="nav-link" href="./Sections/Contact_Us.html"
+                  >Contact Us</a
+                >
               </li>
             </ul>
           </div>
         </div>
       </nav>
-    
     </header>
     <main>
-      <section>
+      <section class="container-fluid">
         <figure class="quoteCard">
           <div class="quoteCard__Hero">
             <img
@@ -60,17 +74,9 @@
         </figure>
       </section>
       <section class="container-fluid">
-        <div class="row justify-content-around gap">
+        <div class="row justify-content-around gap-3">
           <div
-            class="
-              card
-              col-lg-3 col-sm-12 col-md-0
-              rounded-lg
-              overflow-hidden
-              p-0
-              border-0
-              shadow
-            "
+            class="card col-lg-3 rounded-lg overflow-hidden p-0 border-0 shadow"
           >
             <img
               class="card-img-top d-block container-fluid p-0 m-0"
@@ -89,15 +95,7 @@
             </div>
           </div>
           <div
-            class="
-              card
-              col-lg-3 col-sm-12
-              rounded-lg
-              overflow-hidden
-              p-0
-              border-0
-              shadow
-            "
+            class="card col-lg-3 rounded-lg overflow-hidden p-0 border-0 shadow"
           >
             <img
               class="card-img-top"
@@ -116,15 +114,7 @@
             </div>
           </div>
           <div
-            class="
-              card
-              col-lg-3 col-sm-12
-              rounded-lg
-              overflow-hidden
-              p-0
-              border-0
-              shadow
-            "
+            class="card col-lg-3 rounded-lg overflow-hidden p-0 border-0 shadow"
           >
             <img
               class="card-img-top"
@@ -146,20 +136,50 @@
       </section>
     </main>
     <footer>
-      <a class="chocolakeyLogo--v2" href="#">
-        <img src="./img/Property 1=Variant2.svg" alt="Chocolakey Logo" />
+      <a class="chocolakeyLogo chocolakeyLogo--v2" href="#">
+        <img src="../img/Property 1=Variant2.svg" alt="Chocolakey Logo" />
         <div>
-          <h1>Chocolakey</h1>
-          <small>We make your keyboard sweet</small>
+          <h1 class="chocolakeyLogo__name chocolakeyLogo--v2__name">Chocolakey</h1>
+          <small class="chocolakeyLogo--v2__slogan">We make your keyboard sweet</small>
         </div>
       </a>
 
       <p>&copy; Copyright 2021, Chocolakey</p>
     </footer>
+    
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="goo"
+      version="1.1"
+      width="100%"
+    >
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur
+            in="SourceGraphic"
+            stdDeviation="6"
+            result="blur"
+          ></feGaussianBlur>
+          <feColorMatrix
+            in="blur"
+            mode="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -15"
+            result="goo"
+          ></feColorMatrix>
+          <feComposite
+            in="SourceGraphic"
+            in2="goo"
+            operator="atop"
+          ></feComposite>
+        </filter>
+      </defs>
+    </svg>
+    <div id="cursor"></div>
+    <script src="./js/script.js"></script>
   </body>
 </html>

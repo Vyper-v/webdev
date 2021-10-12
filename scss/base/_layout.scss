@@ -19,12 +19,12 @@ body {
 
 header {
   @include flexbox(row, space-between, center);
-  background: mix($color-base-1, rgba(0, 0, 0, 0.8), 70%);
   grid-area: header;
   position: sticky;
   top: 0;
+  background-color: $color-primary;
+  box-shadow: $shadow-4;
 }
-
 main {
   grid-area: main;
   padding: 0 nth($list: $scale, $n: 4) * 1rem;
@@ -38,7 +38,7 @@ footer {
   grid-area: footer;
 
   * {
-    color: $color-secundary;
+    color: $color-primary;
   }
   p{
     font-size: 1rem;

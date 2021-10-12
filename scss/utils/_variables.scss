@@ -1,12 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&family=Lato:wght@300;400;700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Lato&family=Zilla+Slab:wght@300;400;700&display=swap");
 $font-1: "Lato", sans-serif;
-$font-2: "Josefin Sans", sans-serif;
+$font-2: "Zilla Slab", serif;
 
-$color-primary: hsl(45, 100%, 39%);
-$color-secundary: hsl(39, 45%, 10%);
-$color-base-1: hsl(39, 17%, 26%);
-$color-base-2: hsl(39, 17%, 66%);
+$color-primary: #6d4b31;
+$color-secundary: #ffa600;
+$color-base-1: #dedede;
+$color-base-2: #000000;
 
 $scale: 1, 1.25, 2, 2.827, 4, 5.653;
 
@@ -17,30 +16,28 @@ $shadow-4: 0 0 1rem hsla(0, 0%, 0%, 0.2);
 
 $border-radius: 1.5rem;
 
-$breakpoints: (
-  'mobile': 76.798rem,
-  'tablet': 61.999rem,
-  'desktop': 119.998rem,
+$mobile: 76.798rem;
+$tablet: 61.999rem;
+$desktop: 119.998rem;
+
+$text-gradient: linear-gradient(
+  to right,
+  $color-base-1 0,
+  lighten($color-base-1, 4) 22%,
+  $color-base-1 45%,
+  $color-base-1 50%,
+  $color-base-1 55%,
+  lighten($color-base-1, 4) 78%,
+  $color-base-1 100%
 );
 
-$text-gradient:linear-gradient(
- to right,
- $color-base-2 0,
- lighten($color-primary, 4) 22%,
- $color-primary 45%,
- $color-base-2 50%,
- $color-primary 55%,
- lighten($color-primary, 4) 78%,
- $color-base-2 100%
-);
-
-$text-gradient-2:linear-gradient(
- to right,
- $color-base-1,
- lighten($color-secundary, 4) 22%,
- $color-secundary 45%,
- $color-base-1 50%,
- $color-secundary 55%,
- lighten($color-secundary, 4) 78%,
- $color-base-1 100%
+$text-gradient-2: linear-gradient(
+  to right,
+  $color-base-1,
+  lighten($color-secundary, 4) 22%,
+  $color-secundary 45%,
+  $color-base-1 50%,
+  $color-secundary 55%,
+  lighten($color-secundary, 4) 78%,
+  $color-base-1 100%
 );

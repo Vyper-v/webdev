@@ -1,0 +1,33 @@
+@use "../utils" as *;
+
+$cursor-size: 28px;
+
+
+#cursor {
+  position: fixed;
+  top: $cursor-size * -0.5;
+  left: $cursor-size * -0.5;
+  pointer-events: none;
+  mix-blend-mode: exclusion ;
+  filter: url(#goo);
+}
+
+.cursor-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $cursor-size;
+  height: $cursor-size;
+  border-radius: $cursor-size;
+  background: $color-primary;
+  transform-origin: center center;
+}
+
+h1 {
+  user-select: none;
+}
+
+
+.goo {
+  display: none;
+}

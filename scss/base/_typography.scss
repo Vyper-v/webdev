@@ -8,18 +8,18 @@ html {
 @for $i from 1 through 6 {
   h#{$i} {
     font-family: $font-2;
-    font-size: 6.653rem - (nth($scale,$i) * 1rem);
+    font-size: (6.5 - $i) * 1rem;
   }
 }
 
 a {
-  color: $color-primary;
+  color: $color-base-1;
   &:hover {
-    color: $color-base-1;
+    color: $color-secundary;
   }
 }
 
-p,span {
-  font-size: 2rem;
-  color: $color-base-2;
+p,span,small {
+  font-size: 1.6rem;
+  color: $color-base-1;
 }
