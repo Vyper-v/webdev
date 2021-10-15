@@ -5,11 +5,22 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  line-height: 1.5;
+}
+
+$max-weight: 900 !default;
+$max-width: 15ch;
 @for $i from 1 through 6 {
   h#{$i} {
     font-family: $font-2;
+    line-height: 1.1;
     font-size: (6.5 - $i) * 1rem;
+    font-weight: $max-weight;
+    max-width: $max-width;
   }
+  $max-weight: $max-weight - 100;
+  $max-width: $max-width * 2;
 }
 
 a {
@@ -19,7 +30,16 @@ a {
   }
 }
 
-p,span,small {
+p,
+span,
+small {
   font-size: 1.6rem;
   color: $color-base-1;
+}
+
+*::selection {
+  color: rgb(84, 84, 255);
+  background: $color-base-1;
+  background-size: 0;
+  font-weight: bold;
 }

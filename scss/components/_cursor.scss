@@ -8,7 +8,7 @@ $cursor-size: 28px;
   top: $cursor-size * -0.5;
   left: $cursor-size * -0.5;
   pointer-events: none;
-  mix-blend-mode: exclusion ;
+  mix-blend-mode: difference ;
   filter: url(#goo);
 }
 
@@ -23,11 +23,8 @@ $cursor-size: 28px;
   transform-origin: center center;
 }
 
-h1 {
-  user-select: none;
-}
+// h1 {
+//   user-select: none;
+// }
 
 
-.goo {
-  display: none;
-}

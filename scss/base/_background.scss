@@ -1,4 +1,6 @@
+@use "../utils" as *;
 body {
+  background-color: $color-base-1;
   overflow: overlay;
   &::after {
     content: "";
@@ -15,34 +17,40 @@ body {
 
   &::before {
     content: "";
-    width: 100vw;
-    height: 100vw;
+    width: 200%;
+    height: 200%;
     position: fixed;
+    border-radius: 50%;
     z-index: -10;
     animation: animatedBackground 60s linear alternate infinite;
     background-image: url("../../img/pattern.svg");
     background-attachment: unset;
     background-repeat: repeat;
-    background-position: left;
+    background-position: top;
     background-clip: border-box;
-    background-size: 7vw;
-    transform: scale(2);
+    background-size: 25vmin;
+    transform: scale(3);
   }
 }
+
 @keyframes animatedBackground {
   0% {
-    transform: scale(2) rotate(0deg);
-    background-position: top left;
+    transform: scale(3) rotate(0deg);
+    top: 0;
+    left: 0;
   }
   33% {
-    background-position: top right;
+    top: 0;
+    left: 100%;
   }
   66% {
-    background-position: bottom right;
+    top: 100%;
+    left: 100%;
   }
-  
+
   100% {
-    background-position: bottom left;
-    transform: scale(2) rotate(180deg);
+    top: 100%;
+    left: 0;
+    transform: scale(3) rotate(360deg);
   }
 }

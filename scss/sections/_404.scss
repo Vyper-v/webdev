@@ -1,0 +1,9 @@
+@use '../utils'as *;
+.a404{
+ display:flex;
+ flex-direction: column-reverse;
+ align-items: center;
+ &__heading{
+  color: mix($color-primary,black,80%);
+ }
+}
