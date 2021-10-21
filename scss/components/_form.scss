@@ -1,18 +1,16 @@
 @use "../utils" as *;
 @use "sass:list";
 
-
-
-
 .form {
- padding: list.nth($scale, 3) * 1rem;
- overflow: hidden;
- background: $color-primary;
- border-radius: list.nth($scale, 1) * 1rem;
- box-shadow: $shadow-1;
- display: flex;
- flex-flow: column;
- gap: list.nth($scale, 1) * 1rem;
+  max-width: 70vw;
+  padding: list.nth($scale, 3) * 1rem;
+  overflow: hidden;
+  background: $color-primary;
+  border-radius: list.nth($scale, 1) * 1rem;
+  box-shadow: $shadow-1;
+  display: flex;
+  flex-flow: column;
+  gap: list.nth($scale, 1) * 1rem;
 }
 
 ::placeholder,

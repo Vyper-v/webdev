@@ -1,10 +1,9 @@
 @use "../utils" as *;
 @use 'sass:math';
 ::-webkit-scrollbar {
-  background-color: rgba(0, 0, 0, 0.1);
-  background-color: transparent;
-  width: 2vmin;
-  height: 2vmin;
+  background-color: $color-primary; 
+  width: 1rem;
+  height: 1rem;
 }
 ::-webkit-scrollbar-thumb {
   $border-width: math.div(1rem, 3);

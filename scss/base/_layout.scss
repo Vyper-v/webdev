@@ -2,19 +2,20 @@
 
 body {
   overflow: overlay;
+  overflow-x: hidden;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 
-  // min-width: 100vw;
-  min-height: 100vh;
 
   display: grid;
-  grid-template-columns:auto;
   grid-template-rows: auto 1fr auto;
   grid-template-areas:
     "header"
     "main"
     "footer";
+  @include mobile{
+    display: block;
+  }
 }
 
 header {
@@ -30,9 +31,9 @@ header {
 main {
   grid-area: main;
   display: grid;
-  padding: 2rem;
+  padding: 1.5vmin;
   grid-template-rows: repeat(auto-fit,minmax(min-content,max-content));
-  gap:2rem;
+  gap:1.5rem;
 }
 
 footer {
@@ -44,7 +45,7 @@ footer {
   }
   p{
     font-size: 1rem;
-    align-self: end;
+    align-self: flex-end;
   }
 
   @include mobile{

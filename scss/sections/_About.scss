@@ -1,23 +1,34 @@
 @use "../utils" as *;
-@use 'sass:list';
+@use "sass:list";
 .aboutSection {
-  
-  padding: list.nth($scale,3) * 1rem;
+  & > * + * {
+    margin-top: 1.5rem;
+  }
+
+  padding: 1rem;
+
   &__text {
+    &:nth-child(odd) {
+      color: darken($color-base-1, 25%);
+    }
+
     font-family: $font-2;
-    font-size: 10vh;
+    font-size: 6rem;
     max-width: 75%;
-    color: $color-base-1;
-    text-shadow: $shadow-1;
+    color: lighten($color-base-2, 25%);
     border-radius: 1rem;
     // padding: list.nth($scale,1) * 1rem;
+
+    @include mobile {
+      font-size: 4rem;
+    }
   }
 
   &__img {
-    height: 55vmin;
+    height: 50vmin;
     min-width: 100%;
     object-fit: cover;
-    border-radius: list.nth($scale,1) * 1rem;
-    box-shadow: $shadow-1;
+    border-radius: list.nth($scale, 1) * 1rem;
+    box-shadow: $shadow-3;
   }
 }

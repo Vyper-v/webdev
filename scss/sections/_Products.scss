@@ -2,10 +2,9 @@
 @use "sass:math";
 .products {
   display: grid;
-  padding: nth($list: $scale, $n: 5) * 1rem;
 
-  grid-template-columns: repeat(auto-fill, minmax(math.div($desktop, 2), 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(50vmin, 1fr));
+  gap: 1rem;
 
   &__item {
     overflow: hidden;
@@ -29,6 +28,9 @@
   }
 
   &__Info {
+    & > * + *{
+      margin-top: 1rem;
+    }
     font-size: 2rem;
     font-weight: 300;
     padding: 1rem 2rem;
@@ -41,7 +43,7 @@
 
       h3,
       span {
-        color: $color-secundary;
+        color: $color-secondary;
         font-size: 2.5rem;
         font-weight: bold;
       }

@@ -17,4 +17,7 @@
  @media (max-width:76.8rem) {
   flex-direction: column-reverse ;
  }
+ input[type='submit']:hover{
+  background-color: $color-secondary;
+ }
 }

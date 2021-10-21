@@ -8,38 +8,56 @@
   color: $color-base-2;
   display: flex;
   flex-flow: column wrap;
-  gap: nth($scale, 2) * 1rem;
-  padding: nth($scale, 3) * 1rem;
-  margin: 5vmin;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 1rem auto;
+  cursor: pointer;
 
   &__item {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: $border-rad;
     overflow: hidden;
     display: flex;
-    padding: nth($scale, 2) * 1rem;
+    padding: 1rem;
     text-align: justify;
+    box-shadow: $shadow-4;
+
+    
   }
 
   &__Head {
+    & > * + *{
+      margin-top: 1rem;
+    }
+
     img {
-      width: 20vmin;
+      width: 25rem;
+      max-height: 18ch * 2;
       object-fit: cover;
       border-radius: 1rem;
       float: left;
       margin-right: 2rem;
+
+      @include mobile{
+        width: min-content;
+        float: initial;
+      }
+      
     }
+
+    
   }
 
   &__Info {
     display: flex;
     flex-direction: column;
-    color: $color-secundary;
-    h3 {
-      font-size: 3rem;
+    color: $color-secondary;
+    gap: 2rem;
+    h3{
+      max-width: 18ch;
     }
     span {
-      color: $color-secundary;
+      color: $color-secondary;
       font-size: 2rem;
       margin-right: nth($scale, 2) * 1rem;
     }
