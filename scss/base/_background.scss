@@ -11,46 +11,21 @@ body {
     background-image: url("../../img/wavetop.svg");
     background-repeat: no-repeat;
     background-position: top;
-    background-size: 110vw;
+    background-size: 100vw;
     background-clip: border-box;
   }
 
   &::before {
     content: "";
-    width: 200%;
-    height: 200%;
+    width: 100vw;
+    height: 100vh;
     position: fixed;
-    border-radius: 50%;
     z-index: -10;
-    animation: animatedBackground 60s linear alternate infinite;
     background-image: url("../../img/pattern.svg");
     background-attachment: unset;
     background-repeat: repeat;
     background-position: top;
     background-clip: border-box;
-    background-size: 25vmin;
-    transform: scale(3);
-  }
-}
-
-@keyframes animatedBackground {
-  0% {
-    transform: scale(3) rotate(0deg);
-    top: 0;
-    left: 0;
-  }
-  33% {
-    top: 0;
-    left: 100%;
-  }
-  66% {
-    top: 100%;
-    left: 100%;
-  }
-
-  100% {
-    top: 100%;
-    left: 0;
-    transform: scale(3) rotate(360deg);
+    background-size: 50vmin;
   }
 }

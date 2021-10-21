@@ -11632,46 +11632,23 @@ body::after {
   background-image: url("../../img/wavetop.svg");
   background-repeat: no-repeat;
   background-position: top;
-  background-size: 110vw;
+  background-size: 100vw;
   background-clip: border-box;
 }
 body::before {
   content: "";
-  width: 200%;
-  height: 200%;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
-  border-radius: 50%;
   z-index: -10;
-  animation: animatedBackground 60s linear alternate infinite;
   background-image: url("../../img/pattern.svg");
   background-attachment: unset;
   background-repeat: repeat;
   background-position: top;
   background-clip: border-box;
-  background-size: 25vmin;
-  transform: scale(3);
+  background-size: 50vmin;
 }
 
-@keyframes animatedBackground {
-  0% {
-    transform: scale(3) rotate(0deg);
-    top: 0;
-    left: 0;
-  }
-  33% {
-    top: 0;
-    left: 100%;
-  }
-  66% {
-    top: 100%;
-    left: 100%;
-  }
-  100% {
-    top: 100%;
-    left: 0;
-    transform: scale(3) rotate(360deg);
-  }
-}
 body {
   overflow: overlay;
   overflow-x: hidden;
@@ -11876,7 +11853,7 @@ footer {
   user-select: none;
 }
 .chocolakeyLogo__name--animated {
-  animation: uhlcbk4 3.5s linear infinite;
+  animation: ufzzap6 3.5s linear infinite;
   text-align: center;
   background: linear-gradient(to right, #dedede 0, #e8e8e8 22%, #dedede 45%, #dedede 50%, #dedede 55%, #e8e8e8 78%, #dedede 100%);
   background-size: 200% auto;
@@ -11912,7 +11889,7 @@ footer {
   color: #6d4b31;
 }
 
-@keyframes uhlcbk4 {
+@keyframes ufzzap6 {
   to {
     background-position: 200% center;
   }
@@ -12036,7 +12013,7 @@ input[type=submit] {
   font-family: "Zilla Slab", serif;
   font-size: 6rem;
   max-width: 75%;
-  color: #404040;
+  color: #545454;
   border-radius: 1rem;
 }
 .aboutSection__text:nth-child(odd) {
@@ -12080,7 +12057,7 @@ input[type=submit] {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
   border-radius: 1.5rem;
   overflow: hidden;
-  color: #000000;
+  color: #141414;
   display: flex;
   flex-flow: column wrap;
   gap: 1rem;
