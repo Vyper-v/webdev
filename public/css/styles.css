@@ -11646,7 +11646,7 @@ body::before {
   background-repeat: repeat;
   background-position: top;
   background-clip: border-box;
-  background-size: 50vmin;
+  background-size: 100vmax;
 }
 
 body {
@@ -11853,7 +11853,7 @@ footer {
   user-select: none;
 }
 .chocolakeyLogo__name--animated {
-  animation: ufzzap6 3.5s linear infinite;
+  animation: uumrsq3 3.5s linear infinite;
   text-align: center;
   background: linear-gradient(to right, #dedede 0, #e8e8e8 22%, #dedede 45%, #dedede 50%, #dedede 55%, #e8e8e8 78%, #dedede 100%);
   background-size: 200% auto;
@@ -11889,7 +11889,7 @@ footer {
   color: #6d4b31;
 }
 
-@keyframes ufzzap6 {
+@keyframes uumrsq3 {
   to {
     background-position: 200% center;
   }
